@@ -1,0 +1,17 @@
+.scrollContainer {
+  @apply -mx-4 px-4;
+}
+
+.mobileScroll {
+  @apply flex md:hidden overflow-x-auto snap-x snap-mandatory gap-4 pb-4;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;  /* Firefox */
+}
+
+.mobileScroll::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari and Opera */
+}
+
+.productCard {
+  @apply snap-start shrink-0 w-[180px] md:w-full;
+}
