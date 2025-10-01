@@ -15,56 +15,18 @@ export default async function Nav() {
         <nav className="content-container txt-xsmall-plus text-ui-fg-subtle flex items-center justify-between w-full h-full text-small-regular">
           <div className="flex-1 basis-0 h-full flex items-center">
             <div className="h-full">
-              <LocalizedClientLink href="/" className="flex items-center h-full">
-                <img src="https://slvk.b-cdn.net/logo/hernestroje.png" alt="Herne Pocitace" className="h-full" />
-              </LocalizedClientLink>
+              <SideMenu regions={regions} />
             </div>
           </div>
 
-          <div className="flex items-center h-full txt-compact-xlarge-plus uppercase gap-x-6">
+          <div className="flex items-center h-full">
             <LocalizedClientLink
               href="/"
-              className="hover:text-ui-fg-base"
+              className="txt-compact-xlarge-plus hover:text-ui-fg-base uppercase"
               data-testid="nav-store-link"
             >
-              Počítače
+              Medusa Store
             </LocalizedClientLink>
-            <LocalizedClientLink
-              href="/"
-              className="hover:text-ui-fg-base"
-              data-testid="nav-store-link"
-            >
-              Notebooky
-            </LocalizedClientLink>
-                        <LocalizedClientLink
-              href="/"
-              className="hover:text-ui-fg-base"
-              data-testid="nav-store-link"
-            >
-              Doplnky
-            </LocalizedClientLink>
-                        <LocalizedClientLink
-              href="/"
-              className="hover:text-ui-fg-base"
-              data-testid="nav-store-link"
-            >
-              Konfigurátor
-            </LocalizedClientLink>
-                        <LocalizedClientLink
-              href="/"
-              className="hover:text-ui-fg-base"
-              data-testid="nav-store-link"
-            >
-              Výkup
-            </LocalizedClientLink>
-                        <LocalizedClientLink
-              href="/"
-              className="hover:text-ui-fg-base"
-              data-testid="nav-store-link"
-            >
-              Servis
-            </LocalizedClientLink>
-            
           </div>
 
           <div className="flex items-center gap-x-6 h-full flex-1 basis-0 justify-end">

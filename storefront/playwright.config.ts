@@ -1,6 +1,6 @@
 import { defineConfig, devices } from "@playwright/test"
 import path from "path"
-import "../atcimport/node_modules/dotenv/config.js"
+import "dotenv/config.js"
 
 export const STORAGE_STATE = path.join(__dirname, "playwright/.auth/user.json")
 
