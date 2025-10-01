@@ -15,7 +15,9 @@ export default async function Nav() {
         <nav className="content-container txt-xsmall-plus text-ui-fg-subtle flex items-center justify-between w-full h-full text-small-regular">
           <div className="flex-1 basis-0 h-full flex items-center">
             <div className="h-full">
-              <img src="https://slvk.b-cdn.net/logo/hernestroje.png" alt="Herne Pocitace" className="h-full" />
+              <LocalizedClientLink href="/" className="flex items-center h-full">
+                <img src="https://slvk.b-cdn.net/logo/hernestroje.png" alt="Herne Pocitace" className="h-full" />
+              </LocalizedClientLink>
             </div>
           </div>
 
