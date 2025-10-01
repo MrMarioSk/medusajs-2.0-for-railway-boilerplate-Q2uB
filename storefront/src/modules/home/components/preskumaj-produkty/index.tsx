@@ -120,7 +120,7 @@ const PreskumajProdukty = () => {
     <div className="py-12">
       <div className="content-container">
         <Text className="text-3xl font-semibold mb-8 px-4 md:px-0">
-          Preskúmaj všetky produkty Apple.
+          Preskúmaj naše najpredávanejšie herné počítače.
         </Text>
         {/* Mobile scroll container */}
         <div className="md:hidden -mx-4 px-4">
