@@ -38,13 +38,42 @@ export default function ProductActions({
   const [isAdding, setIsAdding] = useState(false)
   const countryCode = useParams().countryCode as string
 
-  // If there is only 1 variant, preselect the options
+  // Preselect options when there's only one variant or when options have only one value
   useEffect(() => {
+    // If there's only one variant, select all its options
     if (product.variants?.length === 1) {
       const variantOptions = optionsAsKeymap(product.variants[0].options)
       setOptions(variantOptions ?? {})
+      return
     }
-  }, [product.variants])
+
+    // For each option type, if there's only one possible value, select it
+    const optionTypes = product.options || []
+    const newOptions = { ...options }
+    let hasChanges = false
+
+    optionTypes.forEach((option) => {
+      // Skip if option is already selected
+      if (options[option.title]) return
+
+      // Get all possible values for this option
+      const possibleValues = new Set(
+        product.variants?.flatMap(v => 
+          v.options?.find(o => o.option?.title === option.title)?.value
+        ).filter(Boolean) || []
+      )
+
+      // If there's only one possible value, select it
+      if (possibleValues.size === 1) {
+        newOptions[option.title] = Array.from(possibleValues)[0]
+        hasChanges = true
+      }
+    })
+
+    if (hasChanges) {
+      setOptions(newOptions)
+    }
+  }, [product.variants, product.options])
 
   const selectedVariant = useMemo(() => {
     if (!product.variants || product.variants.length === 0) {
